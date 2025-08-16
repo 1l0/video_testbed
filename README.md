@@ -1,5 +1,9 @@
 # Nostr HLS Demo
 
+## Live demo
+
+https://1l0.github.io/video_testbed/
+
 ## What this demo does
 
 1. Fetches a nostr event containing Blossom hashes as `.ts` segments.
