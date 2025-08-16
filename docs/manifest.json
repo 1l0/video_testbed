@@ -1,11 +1,11 @@
 {
-    "name": "video_testbed",
-    "short_name": "video_testbed",
+    "name": "Nostr HLS Demo",
+    "short_name": "Nostr HLS Demo",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "description": "Nostr HLS Demo",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
