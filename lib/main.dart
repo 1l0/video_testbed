@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
 import 'package:statescope/statescope.dart';
 import 'package:chewie/chewie.dart';
 import 'package:logging/logging.dart';
+import 'package:flutter_fullscreen/flutter_fullscreen.dart';
 
 import 'state.dart';
 
-void main() {
+void main() async {
   Logger.root.level = Level.ALL;
   Logger.root.onRecord.listen((record) {
     // ignore: avoid_print
     print('${record.level.name}: ${record.time}: ${record.message}');
   });
+  WidgetsFlutterBinding.ensureInitialized();
+  await FullScreen.ensureInitialized();
   runApp(
     StateScope(
       creator: () {
@@ -57,12 +61,15 @@ class HLSVideo extends StatefulWidget {
   State<HLSVideo> createState() => _HLSVideoState();
 }
 
-class _HLSVideoState extends State<HLSVideo> {
+class _HLSVideoState extends State<HLSVideo> with FullScreenListener {
   late VideoPlayerController _videoController;
   late ChewieController _chewieController;
+
   @override
   void initState() {
     super.initState();
+
+    FullScreen.addListener(this);
     _videoController =
         VideoPlayerController.networkUrl(
             Uri.parse(widget.data),
@@ -74,14 +81,33 @@ class _HLSVideoState extends State<HLSVideo> {
     _chewieController = ChewieController(
       videoPlayerController: _videoController,
       aspectRatio: _videoController.value.aspectRatio,
+      allowFullScreen: true,
     );
+    _chewieController.addListener(() {
+      if (_chewieController.isFullScreen && !FullScreen.isFullScreen) {
+        FullScreen.setFullScreen(true);
+      } else if (!_chewieController.isFullScreen && FullScreen.isFullScreen) {
+        FullScreen.setFullScreen(false);
+      }
+    });
   }
 
   @override
   void dispose() {
     _chewieController.dispose();
     _videoController.dispose();
+    FullScreen.removeListener(this);
+
     super.dispose();
+  }
+
+  @override
+  void onFullScreenChanged(bool enabled, SystemUiMode? systemUiMode) {
+    if (!enabled && _chewieController.isFullScreen) {
+      _chewieController.exitFullScreen();
+    } else if (enabled && !_chewieController.isFullScreen) {
+      _chewieController.enterFullScreen();
+    }
   }
 
   @override

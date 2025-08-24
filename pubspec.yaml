@@ -10,6 +10,7 @@ dependencies:
   chewie: ^1.12.1
   flutter:
     sdk: flutter
+  flutter_fullscreen: ^1.2.0
   logging: ^1.3.0
   nip01: ^0.3.0+1
   path: ^1.9.1
