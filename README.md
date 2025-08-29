@@ -13,8 +13,8 @@ https://1l0.github.io/video_testbed/
 
 ## Backends used in this demo
 
-- https://relay.damus.io
-- https://nostr.download
+- Relay: https://relay.damus.io
+- Blossom server: https://blossom.sector01.com
 
 ## Tested platforms
 
