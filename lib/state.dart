@@ -105,7 +105,7 @@ class VideoData extends ChangeNotifier {
     }
 
     // final selectedServer = urls.first;
-    final selectedServer = 'https://blossom.sector01.com';
+    final selectedServer = 'https://nostr.download';
 
     StringBuffer buf = StringBuffer();
 

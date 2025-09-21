@@ -24360,7 +24360,7 @@ $S:2}
 A.amw.prototype={
 $1(a){var s=A.d5().b
 s=s==null?null:s.canvasKitBaseUrl
-return(s==null?"https://www.gstatic.com/flutter-canvaskit/a8bfdfc394deaed5c57bd45a64ac4294dc976a72/":s)+a},
+return(s==null?"https://www.gstatic.com/flutter-canvaskit/c29809135135e262a912cf583b2c90deb9ded610/":s)+a},
 $S:32}
 A.Wd.prototype={
 dB(a,b){var s,r=this.a
@@ -77924,7 +77924,7 @@ case"x":if(g.gA(h)>2){f=g.i(h,1)
 j.push(new A.QB(g.i(h,2),f))}break}}if(k.length===0||i.length===0||j.length===0)throw A.i(A.de("broken event: "+l.j(0)))
 p="#EXTM3U\n#EXT-X-VERSION:3\n#EXT-X-TARGETDURATION:"+i+"\n#EXT-X-MEDIA-SEQUENCE:0\n#EXT-X-PLAYLIST-TYPE:VOD\n"
 for(h=j.length,e=0;e<h;++e){d=j[e]
-p+="#EXTINF:"+d.a+",\nhttps://blossom.sector01.com/"+d.b+"\n"}p+="#EXT-X-ENDLIST"
+p+="#EXTINF:"+d.a+",\nhttps://nostr.download/"+d.b+"\n"}p+="#EXT-X-ENDLIST"
 c=B.bc.ce(p.charCodeAt(0)==0?p:p)
 p="data:application/vnd.apple.mpegurl;base64,"+B.k5.grj().ce(c)
 b=p.charCodeAt(0)==0?p:p
