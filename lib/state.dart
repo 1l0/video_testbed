@@ -4,11 +4,10 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:nip01/nip01.dart';
 import 'package:logging/logging.dart';
-import 'package:path/path.dart' as path;
 
 const relay = 'wss://relay.damus.io';
 const eventId =
-    '4710d4f12e7f50106f2f4d2f1def4c384373921579b25ff49e3516baa7e010ab';
+    '82da155f464f8182a6361ad181c808b66b8bdff8b154da202f550ad729e68ed1';
 
 enum FetchState {
   fetching(message: 'fetching an event...'),
@@ -77,7 +76,6 @@ class VideoData extends ChangeNotifier {
     fetchState = FetchState.composing;
     notifyListeners();
 
-    List<String> urls = [];
     String duration = '';
     List<({String hash, String duration})> hashes = [];
     for (var tag in event.tags) {
@@ -86,10 +84,6 @@ class VideoData extends ChangeNotifier {
       }
       final key = tag[0];
       switch (key) {
-        case 'url':
-          final p = path.normalize(tag[1]);
-          urls.add(p);
-          break;
         case 'duration':
           duration = tag[1];
           break;
@@ -100,7 +94,7 @@ class VideoData extends ChangeNotifier {
           break;
       }
     }
-    if (urls.isEmpty || duration.isEmpty || hashes.isEmpty) {
+    if (duration.isEmpty || hashes.isEmpty) {
       throw Exception('broken event: $event');
     }
 

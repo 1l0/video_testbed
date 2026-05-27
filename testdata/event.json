@@ -1,0 +1,44 @@
+{
+    "kind": 11435,
+    "id": "82da155f464f8182a6361ad181c808b66b8bdff8b154da202f550ad729e68ed1",
+    "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+    "created_at": 1779888641,
+    "tags": [
+        [
+            "duration",
+            "12"
+        ],
+        [
+            "x",
+            "27eb7750a07653837e3ae20adafdc5e6429308fd2000ca244a48e25b29951bd5",
+            "12.013333"
+        ],
+        [
+            "x",
+            "775b10e38371e566362f168f5cc11429fe929cb7f0b012ac90b9f9bdfae60d66",
+            "9.008333"
+        ],
+        [
+            "x",
+            "714916f7b473e94041726cf7a347f09b0af9f93636bd46b3a748acd1a445124b",
+            "9.008333"
+        ],
+        [
+            "x",
+            "1aa83e66e35f50a768e97aed71a0fec8c60ab917eae748a87402b442056c22e3",
+            "12.013333"
+        ],
+        [
+            "x",
+            "8cd876eddadb3998dc45a577b676a59dacaebd6ffd137e001db8698a464fb0ca",
+            "9.008333"
+        ],
+        [
+            "x",
+            "370c0fb7809d69761f680a8626d53a6f247ead9b5ecd75489fb4c0bac912f480",
+            "9.008333"
+        ]
+    ],
+    "content": "",
+    "sig": "ec78909eacda30711b963cfb4e7d73bc461bd0e678a4d1feb5098e969f6fd14fff9fedee2de006b4d69b95c5f28d5371e03c32be01da0b1787e194658bcc4fb4"
+}
