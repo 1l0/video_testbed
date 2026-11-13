@@ -1,5 +1,7 @@
 # Nostr HLS Demo
 
+This demo is obsolete.
+
 ## Live demo
 
 https://1l0.github.io/video_testbed/
